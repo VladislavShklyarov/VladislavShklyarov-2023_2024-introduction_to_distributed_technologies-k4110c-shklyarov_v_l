@@ -41,12 +41,15 @@ kubectl необходим для управления кластером Kubern
 
 Виртуальная машина: Использовал Oracle Virtual Box для виртуализации, так как Minikube требует виртуальной среды. Скачал с официального сайта https://www.virtualbox.org/wiki/Downloads
 
-###. Раворачивание minikube cluster
+### 2. Раворачивание minikube cluster
 Развернул первый кластер minikube при помощи команды minikube start --driver=virtualbox.
 ![image](https://github.com/user-attachments/assets/db589ab2-6b35-4f2a-b869-e6358835babd)
 
-Проверил статус кластера командой minikube status
+Проверил статус кластера командой minikube status.
+
+
 ![image](https://github.com/user-attachments/assets/c3a97348-6cdc-49a6-8af0-322470587c74)
+
 
 Для тренировки запустил еще один кластер под названием minibox, указав параметры: колиство ядер = 2, среда выполнения = containerd(вместо docker), оперативная память = 2gb, разамер диска = 10gb.
 ![image](https://github.com/user-attachments/assets/087b8870-d1d7-4b72-bf47-b632eb711792)
