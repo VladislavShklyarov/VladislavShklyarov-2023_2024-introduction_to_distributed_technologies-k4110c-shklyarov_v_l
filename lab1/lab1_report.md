@@ -27,8 +27,12 @@ Date of finished: 31.09.2023<br>
 Docker Desktop необходим для управления контейнерами и создания образов. Скачал с официального сайта https://docs.docker.com/get-started/get-docker/. Убедился, что Docker работает. ![image](https://github.com/user-attachments/assets/91c8aaae-60aa-407d-b3ec-b4b652654c5f)
  
 
-Minikube для создания локального кластера Kubernetes, что нужно для разработки и тестирования. Скачал с сайта https://minikube.sigs.k8s.io/docs/start/?arch=%2Fwindows%2Fx86-64%2Fstable%2F.exe+download и проверил его работу командой minikube version. 
+Minikube для создания локального кластера Kubernetes, что нужно для разработки и тестирования. Скачал с сайта https://minikube.sigs.k8s.io/docs/start/?arch=%2Fwindows%2Fx86-64%2Fstable%2F.exe+download и проверил его работу командой minikube version.
+
+
+
 ![image](https://github.com/user-attachments/assets/a4a17a75-fa3e-4377-be24-04411e791077)
+
 
 
 kubectl необходим для управления кластером Kubernetes и развертывания приложений. Аналогично убедился в установке с помощью kubectl version --client.
@@ -44,7 +48,10 @@ kubectl необходим для управления кластером Kubern
 Проверил статус кластера командой minikube status
 ![image](https://github.com/user-attachments/assets/c3a97348-6cdc-49a6-8af0-322470587c74)
 
-Для тренировки запустил еще один кластер под названием minibox, указав параметры: колиство ядер = 2, среда выполнения = containerd(вместо docker), оперативная память = 2gb, разамер диска = 10gb.![image](https://github.com/user-attachments/assets/75e3d0f5-e783-4573-bdd9-6d50f04a75e5)
+Для тренировки запустил еще один кластер под названием minibox, указав параметры: колиство ядер = 2, среда выполнения = containerd(вместо docker), оперативная память = 2gb, разамер диска = 10gb.
+![image](https://github.com/user-attachments/assets/087b8870-d1d7-4b72-bf47-b632eb711792)
+
+
 
 
 
