@@ -67,7 +67,10 @@ minikube status
 Для тренировки запустил еще один кластер под названием minibox, указав параметры: колиство ядер = 2, среда выполнения = containerd(вместо docker), оперативная память = 2gb, разамер диска = 10gb.
 ![image](https://github.com/user-attachments/assets/087b8870-d1d7-4b72-bf47-b632eb711792)
 
-Информация о существующих кластерах (команда minikube profile list)
+Информация о существующих кластерах 
+```bash
+minikube profile list
+```
 ![image](https://github.com/user-attachments/assets/ec486af7-be29-4354-939c-c7704afd6cca)
 
 ### 3. Скачивание образа HashiCorp Vault.
