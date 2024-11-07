@@ -1,4 +1,3 @@
-![image](https://github.com/user-attachments/assets/96da9408-1a36-46d6-98b2-741a4f002f3d)University: [ITMO University](https://itmo.ru/ru/)<br>
 Faculty: [FICT](https://fict.itmo.ru)<br>
 Course: [Introduction to distributed technologies](https://github.com/itmo-ict-faculty/introduction-to-distributed-technologies)<br>
 Year: 2024/2025<br>
