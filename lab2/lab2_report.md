@@ -24,8 +24,17 @@ Date of finished: 31.09.2023<br>
 
 В первую очередь скачиваем образ для контейнеров:
 ```bash
-docker pull ifilyaninitmo/itdt-contained-frontend
+docker pull ifilyaninitmo/itdt-contained-frontend:master
 ```
+![image](https://github.com/user-attachments/assets/c5a879d3-dcdf-4e36-a821-c42c3fe96dc9)
+
+Проверяем список контейнеров:
+```bash
+docker images
+```
+
+![Uploading image.png…]()
+
 
 
 
