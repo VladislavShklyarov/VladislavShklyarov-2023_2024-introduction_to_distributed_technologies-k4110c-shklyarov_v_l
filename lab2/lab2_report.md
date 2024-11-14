@@ -136,6 +136,7 @@ kubectl logs <название контейнера>
 ```
 ![image](https://github.com/user-attachments/assets/c67de406-c4ec-4ac5-a054-4aa9e358c570)
 
+### Схема:
 
-
+![Схема](https://github.com/user-attachments/assets/78e4c172-9f7f-4fb1-8c86-b850bfc7ec6f)
 
