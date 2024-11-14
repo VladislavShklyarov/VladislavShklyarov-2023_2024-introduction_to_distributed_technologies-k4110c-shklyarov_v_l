@@ -5,7 +5,7 @@ Group: K4110c<br>
 Author: Shklyarov Vladislav Leonidovich<br>
 Lab: Lab1<br>
 Date of create: 06.11.2024<br>
-Date of finished: 31.09.2023<br>
+Date of finished: 11.09.2023<br>
 
 
 ### Цель работы
