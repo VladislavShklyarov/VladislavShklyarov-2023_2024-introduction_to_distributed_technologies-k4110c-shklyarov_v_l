@@ -82,4 +82,10 @@ kubectl describe pod react-app-replicaset-cfnj7
 
 ![image](https://github.com/user-attachments/assets/4c0bc9cc-c0c6-4168-a0ce-38a06fcf01e0)
 
-Теперь все верно. Оба контейнера успешно запущены и имеют сатус `RUNNING`
+Теперь все верно. Оба контейнера успешно запущены и имеют сатус `Running`.
+Последним шагом нужно проверить, что переменные окружения переданы верно. Для этого можно зайти в контейнер в интерактивном режиме командой `exec -it` и выполнить команду `printenv`.
+
+```bash
+kubectl exec -it react-app-replicaset-kb8ws -- printenv
+
+```
