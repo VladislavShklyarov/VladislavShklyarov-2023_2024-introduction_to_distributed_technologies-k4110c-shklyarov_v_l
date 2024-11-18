@@ -47,7 +47,7 @@ kubectl get configmap react-config -o yaml
 
 ![image](https://github.com/user-attachments/assets/edc14d0f-3b86-4ade-b99a-c326d8571801)
 
-Все прошло без ошибок, `konfigMap` создан.
+Все прошло без ошибок, `configMap` создан.
 
 ####2. Создание `replicaSet` с 2 репликами контейнера.
 ####Передача переменных `REACT_APP_USERNAME`, `REACT_APPCOMPANY_NAME` через `configMap`.
@@ -55,4 +55,31 @@ kubectl get configmap react-config -o yaml
 В отличии от похожего объекта `deployment` из предыдущей лабораторной работы, `replicaSet` представляет собой более "низкий" уровень управления контейнерами. Он не поддерживает обновления, имеет более простую структуру, а его основной задачей является поддержка стабильного числа подов. `deployment` имеет более высокий уровень абстракции, он позволяет осуществлять управления обновлениями и оптимизацию жизненного цикла приложений. Кроме того, `replicaSet` создаются автоматически при создании `deployment`, и являются неотъемлимой его частью.
 
 Для его создания также нужно написать манифест.
+![image](https://github.com/user-attachments/assets/8c77b10f-2bf3-4e04-921c-511e05ab9d50)
 
+Здесь мы указываем тип объекта `ReplicaSet`, и количество реплик =2. В спецификациях шаблона указываем имя контейнера и нунжый нам образ. Также в `envFrom: configMapRef` указываем имя нашего `congifMap`.
+
+Применяем манифест и смотрим, какие создались поды.
+
+```bash
+kubectl apply -f replicaset.yaml
+kubectl get replicaset
+kubectl get pods
+```
+
+Смотрим на результат
+![image](https://github.com/user-attachments/assets/e95e72df-ec95-447a-adbd-07553b5cc40b)
+
+Здесь в колонке `STATUS` мы видим `CreateContainerConfigError`. Это означает что kubernetes не смог создать нужные контейнеры по указанным параметрам. Посмотрим логи одного из контейнеров, чтобы понять, в чем проблема.
+```bash
+kubectl describe pod react-app-replicaset-cfnj7
+``` 
+![image](https://github.com/user-attachments/assets/bc7e8ec9-8baf-4dba-b9e9-f4ca625e68ba)
+
+Здесь сразу видна ошибка. Система не может найти указанный конфигурационный файл. Проблема в том, что в манифесте на создание replicaset имя configmap указано как "react-app-config", в то время как в манифесте конфигруаицонного файла он называется `react-config`. Чтобы исправить эту ошибку необходимо:
+1. Удалить существующий объект replicaset.
+2. Указать правильное имя в манифесте и повторить попытку.
+
+![image](https://github.com/user-attachments/assets/4c0bc9cc-c0c6-4168-a0ce-38a06fcf01e0)
+
+Теперь все верно. Оба контейнера успешно запущены и имеют сатус `RUNNING`
