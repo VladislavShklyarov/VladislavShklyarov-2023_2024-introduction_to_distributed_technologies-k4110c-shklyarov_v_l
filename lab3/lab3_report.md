@@ -1,4 +1,4 @@
-Faculty: [FICT](https://fict.itmo.ru)<br>
+![image](https://github.com/user-attachments/assets/7f1c2e0d-5b3b-483c-8483-ec557b4a547a)Faculty: [FICT](https://fict.itmo.ru)<br>
 Course: [Introduction to distributed technologies](https://github.com/itmo-ict-faculty/introduction-to-distributed-technologies)<br>
 Year: 2024/2025<br>
 Group: K4110c<br>
@@ -85,7 +85,11 @@ kubectl describe pod react-app-replicaset-cfnj7
 Теперь все верно. Оба контейнера успешно запущены и имеют сатус `Running`.
 Последним шагом нужно проверить, что переменные окружения переданы верно. Для этого можно зайти в контейнер в интерактивном режиме командой `exec -it` и выполнить команду `printenv`.
 
-```bash
-kubectl exec -it react-app-replicaset-kb8ws -- printenv
 
+####3. Включение аддона ingress и создание tsl сертификата.
+Аддон ingress включается командой
+```bash
+minikube addons enable ingress
 ```
+![image](https://github.com/user-attachments/assets/4c181d9c-b02f-4f6f-ba0d-80fd8549adea)
+
