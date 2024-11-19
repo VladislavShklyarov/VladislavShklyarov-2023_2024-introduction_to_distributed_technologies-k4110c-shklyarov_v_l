@@ -160,17 +160,12 @@ kubectl create secret tls my-app-tls --key private.key --cert certificate.crt
 ![image](https://github.com/user-attachments/assets/69b80c2c-7b25-4780-bf25-0bedb14122fc)
 
 
-Основные моменты: `secretName: my-app-tls` - тот самый секрет, созданный на предыдущем шаге. `host: react-app.local` - доменное имя, указанное при создании серфитиката. `service.name: react-app-service`: указываем имя сервиса (предстоит создать).
+Основные моменты: `secretName: my-app-tls` - тот самый секрет, созданный на предыдущем шаге. `host: react-app.local` - доменное имя, указанное при создании серфитиката. 
 
-Теперь создаем манифест для сервиса.
-
-![image](https://github.com/user-attachments/assets/f0cabdc8-9c63-403f-83b6-eb619533f163)
-
-Приминяем манифесты
+Приминяем манифест
 
 ```bash
 kubectl apply -f ingress.yaml
-kubectl apply -f service.yaml  # если сервис еще не создан
 ```
 
 Результат:
@@ -181,6 +176,7 @@ kubectl apply -f service.yaml  # если сервис еще не создан
 
 Чтобы прописать параметры в `hosts` необходимо открыть файл `C:\Windows\System32\drivers\etc\hosts` от имени администратора и внести туда следующие изменения:
 
+![image](https://github.com/user-attachments/assets/ee3e42f2-539c-42f5-8ac3-ac1a0e9e8ede)
 
 
 
