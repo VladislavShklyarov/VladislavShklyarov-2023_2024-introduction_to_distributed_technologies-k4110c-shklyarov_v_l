@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/7f1c2e0d-5b3b-483c-8483-ec557b4a547a)Faculty: [FICT](https://fict.itmo.ru)<br>
+![image](https://github.com/user-attachments/assets/f8f81c21-d800-4486-ace0-caee7e2fa8e5)![image](https://github.com/user-attachments/assets/7f1c2e0d-5b3b-483c-8483-ec557b4a547a)Faculty: [FICT](https://fict.itmo.ru)<br>
 Course: [Introduction to distributed technologies](https://github.com/itmo-ict-faculty/introduction-to-distributed-technologies)<br>
 Year: 2024/2025<br>
 Group: K4110c<br>
@@ -130,7 +130,22 @@ openssl req -new -key private.key -out csr.pem -config "C:\Program Files\OpenSSL
 ```bash
 cat csr.pem
 ```
+![image](https://github.com/user-attachments/assets/4932db7b-23ca-430a-b4bf-7b59036dbb78)
+
+Наконец, можно создать сертификат.
+
+```bash
+openssl req -x509 -days 365 -key private.key -in csr.pem -out certificate.crt -config "C:\Program Files\OpenSSL-Win64\bin\cnf\openssl.cnf"
+```
+
+Здесь указвается количество дней, которое действителен сертификат `-days 356`, файл с приватным ключом `-key private.key`, файл с запросом на формирование ключа `-in csr.pem` и само название сертификата `-out certificate.crt`. Здесь также пришлось указать явный путь к файлу "openssl.cnf".
+
+Файл "certigicate.crt" создался в рабочей дериктории. 
 ![Uploading image.png…]()
+
+
+
+
 
 
 
