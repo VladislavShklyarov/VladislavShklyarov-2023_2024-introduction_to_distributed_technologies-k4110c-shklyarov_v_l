@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/f8f81c21-d800-4486-ace0-caee7e2fa8e5)![image](https://github.com/user-attachments/assets/7f1c2e0d-5b3b-483c-8483-ec557b4a547a)Faculty: [FICT](https://fict.itmo.ru)<br>
+Faculty: [FICT](https://fict.itmo.ru)<br>
 Course: [Introduction to distributed technologies](https://github.com/itmo-ict-faculty/introduction-to-distributed-technologies)<br>
 Year: 2024/2025<br>
 Group: K4110c<br>
