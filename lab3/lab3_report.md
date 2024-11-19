@@ -93,3 +93,20 @@ minikube addons enable ingress
 ```
 ![image](https://github.com/user-attachments/assets/4c181d9c-b02f-4f6f-ba0d-80fd8549adea)
 
+Теперь проверим статус дополнения:
+```bash
+kubectl get pods -n ingress-nginx
+```
+![image](https://github.com/user-attachments/assets/2b6f1e9e-cd6d-4986-b1c9-efa8df94b160)
+
+Теперь можно переходить к созданию сертификата. Для этого потребовалось установить `openSSL` - ПО, которое позволяет использовать возможности шифрования для различных целей, включая защиту веб-серверов, шифрование файлов и др. Загружено с https://slproweb.com/products/Win32OpenSSL.html.
+
+Далее необходимо было настроить переменные окружения и добавить путь для OpenSSL. Путь к программе выглядит так:
+![image](https://github.com/user-attachments/assets/3c690b97-f185-4f6e-acc9-3853a9c04eab)
+
+Проверим что все работает корректно, выведя версию в командной строке:
+![image](https://github.com/user-attachments/assets/3b939c7d-f971-40ab-830c-09d7473a889c)
+
+
+
+Контроллер запущен, все хорошо. Переходим к созданию сертификата.
