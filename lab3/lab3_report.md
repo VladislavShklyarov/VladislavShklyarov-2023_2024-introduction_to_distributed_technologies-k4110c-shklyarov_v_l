@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/d9ae607d-c4be-419f-ae9d-78a9f9f1300e)![image](https://github.com/user-attachments/assets/f8f81c21-d800-4486-ace0-caee7e2fa8e5)![image](https://github.com/user-attachments/assets/7f1c2e0d-5b3b-483c-8483-ec557b4a547a)Faculty: [FICT](https://fict.itmo.ru)<br>
+![image](https://github.com/user-attachments/assets/f8f81c21-d800-4486-ace0-caee7e2fa8e5)![image](https://github.com/user-attachments/assets/7f1c2e0d-5b3b-483c-8483-ec557b4a547a)Faculty: [FICT](https://fict.itmo.ru)<br>
 Course: [Introduction to distributed technologies](https://github.com/itmo-ict-faculty/introduction-to-distributed-technologies)<br>
 Year: 2024/2025<br>
 Group: K4110c<br>
@@ -158,7 +158,7 @@ kubectl create secret tls my-app-tls --key private.key --cert certificate.crt
 Теперь можно переходить к созданию ingress манифеста для маршрутизации приложения через доменное имя.
 
 ![image](https://github.com/user-attachments/assets/69b80c2c-7b25-4780-bf25-0bedb14122fc)
-
+![image](https://github.com/user-attachments/assets/d9ae607d-c4be-419f-ae9d-78a9f9f1300e)
 
 Основные моменты: `secretName: my-app-tls` - тот самый секрет, созданный на предыдущем шаге. `host: react-app.local` - доменное имя, указанное при создании серфитиката. 
 
