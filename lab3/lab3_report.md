@@ -179,6 +179,22 @@ kubectl apply -f ingress.yaml
 ![image](https://github.com/user-attachments/assets/ee3e42f2-539c-42f5-8ac3-ac1a0e9e8ede)
 
 
+Далее создаем манифест для сервиса и применяем его:
+
+![image](https://github.com/user-attachments/assets/a83976e2-31ba-469e-b562-9a3d4f35e781)
+![image](https://github.com/user-attachments/assets/18020e57-60bb-4688-896c-3379cbcffcc2)
+
+Теперь можем перейти в браузер по указанной ссылке `react-app.local`.
+Открывается знакомый интерфейс.
+
+![image](https://github.com/user-attachments/assets/8deb7a32-518d-4dc9-90a9-474b104d9e6a)
+
+Осталось проверить сертификат. Откроем его в браузере:
+![image](https://github.com/user-attachments/assets/5341e4cc-de05-4f4a-aa2a-a7d784c88f2f)
+
+Здесь отображаются те сведения, которые мы ввели при создании сертификата.
+
+
 
 
 
