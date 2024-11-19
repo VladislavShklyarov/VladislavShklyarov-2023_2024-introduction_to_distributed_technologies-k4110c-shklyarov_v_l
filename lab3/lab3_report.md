@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/f8f81c21-d800-4486-ace0-caee7e2fa8e5)![image](https://github.com/user-attachments/assets/7f1c2e0d-5b3b-483c-8483-ec557b4a547a)Faculty: [FICT](https://fict.itmo.ru)<br>
+![image](https://github.com/user-attachments/assets/d9ae607d-c4be-419f-ae9d-78a9f9f1300e)![image](https://github.com/user-attachments/assets/f8f81c21-d800-4486-ace0-caee7e2fa8e5)![image](https://github.com/user-attachments/assets/7f1c2e0d-5b3b-483c-8483-ec557b4a547a)Faculty: [FICT](https://fict.itmo.ru)<br>
 Course: [Introduction to distributed technologies](https://github.com/itmo-ict-faculty/introduction-to-distributed-technologies)<br>
 Year: 2024/2025<br>
 Group: K4110c<br>
@@ -140,9 +140,46 @@ openssl req -x509 -days 365 -key private.key -in csr.pem -out certificate.crt -c
 
 Здесь указвается количество дней, которое действителен сертификат `-days 356`, файл с приватным ключом `-key private.key`, файл с запросом на формирование ключа `-in csr.pem` и само название сертификата `-out certificate.crt`. Здесь также пришлось указать явный путь к файлу "openssl.cnf".
 
-Файл "certigicate.crt" создался в рабочей дериктории. 
-![Uploading image.png…]()
+Файл "certificate.crt" создался в рабочей дериктории. 
+![image](https://github.com/user-attachments/assets/50eb688f-6d41-4ccb-bb78-4de6c3c88477)
 
+Следующим шагом является импорт сертификата в minikube. Для хранения сертификатов kubernetes использует секреты. Для его создания необходимо выполнить следующую команду:
+
+```bash
+kubectl create secret tls my-app-tls --key private.key --cert certificate.crt
+```
+Здесь указывются названия файлов с ключом и сертификатом а также название секрета, в данном случае `my-app-tls`.
+
+![image](https://github.com/user-attachments/assets/490eb7de-09ca-43ff-9c68-c8b34824db49)
+
+Секрет создан.
+
+####4) Создание ingress.
+Теперь можно переходить к созданию ingress манифеста для маршрутизации приложения через доменное имя.
+
+![image](https://github.com/user-attachments/assets/69b80c2c-7b25-4780-bf25-0bedb14122fc)
+
+
+Основные моменты: `secretName: my-app-tls` - тот самый секрет, созданный на предыдущем шаге. `host: react-app.local` - доменное имя, указанное при создании серфитиката. `service.name: react-app-service`: указываем имя сервиса (предстоит создать).
+
+Теперь создаем манифест для сервиса.
+
+![image](https://github.com/user-attachments/assets/f0cabdc8-9c63-403f-83b6-eb619533f163)
+
+Приминяем манифесты
+
+```bash
+kubectl apply -f ingress.yaml
+kubectl apply -f service.yaml  # если сервис еще не создан
+```
+
+Результат:
+
+![image](https://github.com/user-attachments/assets/bd911b88-a94a-43d7-8b36-336dded824bd)
+
+####5) Прописываем FQDN и IP адресс ingress в `hosts` и переходим в браузер.
+
+Чтобы прописать параметры в `hosts` необходимо открыть файл `C:\Windows\System32\drivers\etc\hosts` от имени администратора и внести туда следующие изменения:
 
 
 
