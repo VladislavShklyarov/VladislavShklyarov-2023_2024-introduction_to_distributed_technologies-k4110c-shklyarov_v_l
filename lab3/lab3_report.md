@@ -7,10 +7,10 @@ Lab: Lab3<br>
 Date of create: 06.11.2024<br>
 Date of finished: 14.11.2024<br>
 
-###Цель работы
+### Цель работы
 Познакомиться с сертификатами и "секретами" в Minikube, правилами безопасного хранения данных в Minikube.
 
-###Ход работы
+### Ход работы
 1) Создать `configMap` с переменными `REACT_APP_USERNAME`, `REACT_APPCOMPANY_NAME`.
 2) Создать `replicaSet` с 2 репликами контейнера и передать переменные `REACT_APP_USERNAME`, `REACT_APPCOMPANY_NAME` через `configMap`.
 3) Включить `minikube addons enable ingress` и сгенерировать TLS сертификат, импортировать сертификат в minikube.
@@ -49,8 +49,8 @@ kubectl get configmap react-config -o yaml
 
 Все прошло без ошибок, `configMap` создан.
 
-####2. Создание `replicaSet` с 2 репликами контейнера.
-####Передача переменных `REACT_APP_USERNAME`, `REACT_APPCOMPANY_NAME` через `configMap`.
+#### 2. Создание `replicaSet` с 2 репликами контейнера.
+#### Передача переменных `REACT_APP_USERNAME`, `REACT_APPCOMPANY_NAME` через `configMap`.
 
 В отличии от похожего объекта `deployment` из предыдущей лабораторной работы, `replicaSet` представляет собой более "низкий" уровень управления контейнерами. Он не поддерживает обновления, имеет более простую структуру, а его основной задачей является поддержка стабильного числа подов. `deployment` имеет более высокий уровень абстракции, он позволяет осуществлять управления обновлениями и оптимизацию жизненного цикла приложений. Кроме того, `replicaSet` создаются автоматически при создании `deployment`, и являются неотъемлимой его частью.
 
@@ -86,7 +86,7 @@ kubectl describe pod react-app-replicaset-cfnj7
 Последним шагом нужно проверить, что переменные окружения переданы верно. Для этого можно зайти в контейнер в интерактивном режиме командой `exec -it` и выполнить команду `printenv`.
 
 
-####3. Включение аддона ingress и создание tsl сертификата.
+#### 3. Включение аддона ingress и создание tsl сертификата.
 Аддон ingress включается командой
 ```bash
 minikube addons enable ingress
@@ -154,7 +154,7 @@ kubectl create secret tls my-app-tls --key private.key --cert certificate.crt
 
 Секрет создан.
 
-####4) Создание ingress.
+#### 4. Создание ingress.
 Теперь можно переходить к созданию ingress манифеста для маршрутизации приложения через доменное имя.
 
 ![image](https://github.com/user-attachments/assets/69b80c2c-7b25-4780-bf25-0bedb14122fc)
@@ -171,7 +171,7 @@ kubectl apply -f ingress.yaml
 
 ![image](https://github.com/user-attachments/assets/bd911b88-a94a-43d7-8b36-336dded824bd)
 
-####5) Прописываем FQDN и IP адресс ingress в `hosts` и переходим в браузер.
+#### 5. Прописываем FQDN и IP адресс ingress в `hosts` и переходим в браузер.
 
 Чтобы прописать параметры в `hosts` необходимо открыть файл `C:\Windows\System32\drivers\etc\hosts` от имени администратора и внести туда следующие изменения:
 
@@ -183,6 +183,7 @@ kubectl apply -f ingress.yaml
 ![image](https://github.com/user-attachments/assets/a83976e2-31ba-469e-b562-9a3d4f35e781)
 ![image](https://github.com/user-attachments/assets/18020e57-60bb-4688-896c-3379cbcffcc2)
 
+#### 6. Проверка сертификата в браузере
 Теперь можем перейти в браузер по указанной ссылке `react-app.local`.
 Открывается знакомый интерфейс.
 
