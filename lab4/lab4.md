@@ -66,7 +66,8 @@ minikube kubectl -- delete ippools default-ipv4-ippool
 
 Далее создаем 2 .yaml файла для конфигурации. Создавал при помощи редактора nano.
 
-![image](https://github.com/user-attachments/assets/efb6fb4f-14a4-42c8-9f2e-bd6f6eb9b590)
+![image](https://github.com/user-attachments/assets/0138fcab-5144-4128-91c4-7cffe02f3e90)
+
 ![image](https://github.com/user-attachments/assets/ac85675c-f800-47a6-9906-239c836101a6)
 
 Чтобы применить эти манифеста, сначала необходимо установить `calicoctl`
