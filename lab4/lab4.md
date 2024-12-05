@@ -16,9 +16,9 @@ Date of finished: 14.11.2024<br>
 2) Указать `lable` для запущеных ранее нод и назначить IP-адреса.
 3) Разработать манифест для Calico.
 4) Создать `deployment` с 2 репликами контейнера.
-6) Создать сервис для доступа к подам.
-7) Запустить режим проброса портов и подключиться к контейнерам через веб-браузер, проверить `Container name` и  `Container IP`.
-8) Пропинговать поды.
+5) Создать сервис для доступа к подам.
+6) Запустить режим проброса портов и подключиться к контейнерам через веб-браузер, проверить `Container name` и  `Container IP`.
+7) Пропинговать поды.
 
 ### Выполнение работы
 #### 1. Запуск Minikube с плагином `CNI=Calico`.
@@ -86,7 +86,17 @@ minikube kubectl -- delete ippools default-ipv4-ippool
 Снова пробуем применить манифест:
 ![image](https://github.com/user-attachments/assets/77201538-ba64-4328-9099-35100e8c1196)
 IPPool успешно создан. Повторяем для второго файла
+![image](https://github.com/user-attachments/assets/c0b7836c-321f-4f97-bf49-7551417c70a5)
 
+Проверяем созданные пулы:
+![image](https://github.com/user-attachments/assets/75a0eedb-8403-4dc4-8674-ba9722f4ba23)
+
+### Создаyние `deployment` с 2 репликами контейнера
+
+Создаем манифест с kind: deployment:
+![image](https://github.com/user-attachments/assets/138d52cf-2f14-47d1-bad5-94ea2e897dad)
+И применяем его:
+![image](https://github.com/user-attachments/assets/8cb6e12d-1a34-466e-a900-fa4c1628e5d3)
 
 
 
