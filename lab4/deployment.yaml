@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cni-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+    app: cni-deployment
+  template:
+    metadata:
+      labels:
+       apps: cni-deployment
+    spec:
+      containers:
+      - name: frontend
+      image: ifilyaninitmo/itdt-contained-frontend:master
+      ports:
+      - containerPort: 3000
+      env:
+        - name: REACT_APP_USERNAME
+          value: "Shklyarov Vladislav"
+        - name: REACT_APP_COMPANY_NAME
+          value: "ITMO university"
